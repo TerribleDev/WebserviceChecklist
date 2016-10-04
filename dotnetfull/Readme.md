@@ -1,0 +1,10 @@
+- [ ] Remove insecure headers https://www.troyhunt.com/shhh-dont-let-your-response-headers/
+- [ ] Configure Content Security Policy - Content Security Policy (CSP) is a great new HTTP header that controls where a web browser is allowed to load content from and the type of content it is allowed to load.
+- [ ] Secure Elmah - Secure the Elmah error log page, so that anonymous users cannot access it. Open the web.config file and look in 'appSettings' for the 'elmah.mvc.allowedRoles' or 'elmah.mvc.allowedUsers' setting. You can set this value to restrict the Elmah page to a role or individual user. Most likely you will have an 'Administrator' role and you can add this to the 'elmah.mvc.allowedRoles' setting
+- [ ] Configure Site-wide HTTPS - Please note that SSL has been superseded by TLS. SSL is vulnerable to the POODLE security vulnerability and should not be used. These steps outline how to secure your site so that all requests and responses are made over HTTPS using TLS, you should consider using it across your whole site for best security, rather than having a mix of HTTP and HTTPS pages
+- [ ] Adjust Request Limits - There are settings in the Web.config file under the httpRuntime and requestLimits elements that limit maximum size of the requests clients can make to your site. You can limit the maximum content size, maximum URL length and maximum query string length. You should lower these as much as possible, while still having a working site. 
+- [ ] Enable Retail Mode - Enable retail mode in the machine.config file on the production server you are hosting your site on. You can find the file in the locations: `32-bit - %windir%\Microsoft.NET\Framework\[.NET Version]\config\machine.config`, `64-bit - %windir%\Microsoft.NET\Framework64\[.NET Version]\config\machine.config`
+- [ ] Check Site On ASafaWeb.com - Scan your site for security vulnerabilities at ASafaWeb.com.
+- [ ] Upgrade to .NET 4.6 - Upgrade to .NET 4.6 to enable [randomized hashes](https://msdn.microsoft.com/library/jj152924.aspx).
+- [ ] Compile in release mode
+- [ ] Precompile razor views
